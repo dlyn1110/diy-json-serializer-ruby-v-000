@@ -26,6 +26,11 @@ class PostsController < ApplicationController
    render json: PostSerializer.serialize(post)
   end
 
+  def post_data
+    post = Post.find(params[:id])
+    render json: PostSerializer.serialize(post)
+  end
+
   def update
     @post.update(post_params)
     redirect_to post_path(@post)
