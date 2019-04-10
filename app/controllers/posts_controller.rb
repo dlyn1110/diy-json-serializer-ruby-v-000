@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def body
    post = Post.find(params[:id])
    render json: PostSerializer.serialize(post)
- end
+  end
 
   def update
     @post.update(post_params)
